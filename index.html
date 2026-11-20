@@ -4,7 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARDRA FITNESS | Mattakuzhy, Puthencruz</title>
-<style>
+.owner-section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:50px 25px;
+  display:flex;
+  align-items:center;
+  gap:50px;
+  background:#111;
+  border:1px solid #292929;
+  border-radius:20px;
+}
+
+.owner-photo{
+  flex:0 0 330px;
+}
+
+.owner-photo img{
+  width:100%;
+  height:430px;
+  object-fit:cover;
+  border-radius:18px;
+  display:block;
+  filter:grayscale(100%);
+}
+
+.owner-info{
+  flex:1;
+}
+
+.owner-label{
+  color:#ed171c;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:3px;
+  margin-bottom:12px;
+}
+
+.owner-info h2{
+  font-size:42px;
+  margin:0 0 8px;
+  color:#fff;
+}
+
+.owner-info h2 span{
+  color:#ed171c;
+}
+
+.owner-info h3{
+  color:#aaa;
+  font-size:18px;
+  letter-spacing:2px;
+  margin:0 0 20px;
+}
+
+.owner-info p{
+  color:#ccc;
+  font-size:17px;
+  line-height:1.7;
+  margin-bottom:25px;
+}
+
+.owner-phone{
+  display:inline-block;
+  padding:12px 22px;
+  background:#ed171c;
+  color:#fff;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+@media(max-width:700px){
+  .owner-section{
+    flex-direction:column;
+    text-align:center;
+    margin:40px 15px;
+    padding:30px 20px;
+    gap:30px;
+  }
+
+  .owner-photo{
+    width:100%;
+    max-width:320px;
+  }
+
+  .owner-photo img{
+    height:400px;
+  }
+
+  .owner-info h2{
+    font-size:32px;
+  }
+}
 :root{--red:#ed171c;--red2:#ff2429;--black:#070707;--panel:#111;--white:#f7f7f7;--muted:#bdbdbd}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
