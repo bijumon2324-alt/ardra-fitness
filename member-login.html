@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Login | Ardra Fitness</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      color: white;
+    }
+
+    .login-box {
+      width: 90%;
+      max-width: 400px;
+      padding: 35px 25px;
+      background: #1d1d1d;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      background: #292929;
+      color: white;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #e63946;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    #error {
+      color: #ff6b6b;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .back {
+      display: block;
+      margin-top: 20px;
+      color: #aaa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <h1>ARDRA FITNESS</h1>
+    <p class="subtitle">Member Login</p>
+
+    <input type="text" id="memberId" placeholder="Member ID">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">LOGIN</button>
+
+    <p id="error">Invalid Member ID or Password</p>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+  </div>
+
+  <script>
+    function login() {
+
+      const memberId = document.getElementById("memberId").value;
+      const password = document.getElementById("password").value;
+
+      // Demo member account
+      if (memberId === "AF001" && password === "1234")
