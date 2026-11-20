@@ -108,7 +108,7 @@ input{width:100%;padding:14px;margin:7px 0;background:#080808;border:1px solid #
 
 <div class="modal" id="joinModal"><div class="box">
   <button class="close" onclick="closeJoin()">×</button><h2>Join ARDRA FITNESS</h2><p>Send your membership enquiry.</p>
-  <form onsubmit="submitForm(event)"><input required placeholder="Full name"><input required type="tel" placeholder="Phone number"><input type="email" placeholder="Email"><button class="form-btn">Send Enquiry</button></form>
+  <form action="https://formspree.io/f/xppdjznw" method="POST"><input required name="name" placeholder="Full name"><input required type="tel" name="phone" placeholder="Phone number"><input type="email" name="email" placeholder="Email"><input type="hidden" name="_subject" value="New ARDRA FITNESS Membership Enquiry"><button class="form-btn" type="submit">Send Enquiry</button></form>
 </div></div>
 <script>
 function openJoin(){document.getElementById('joinModal').classList.add('show')}
