@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Member Dashboard | Ardra Fitness</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #111;
+      color: white;
+    }
+
+    header {
+      background: #1c1c1c;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 25px;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .welcome {
+      margin-bottom: 25px;
+    }
+
+    .welcome h2 {
+      font-size: 28px;
+    }
+
+    .welcome p {
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #1d1d1d;
+      padding: 22px;
+      border-radius: 15px;
+      border: 1px solid #2d2d2d;
+    }
+
+    .card h3 {
+      color: #aaa;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .active {
+      color: #35d07f;
+    }
+
+    .payment {
+      color: #35d07f;
+    }
+
+    .logout {
+      width: 100%;
+      margin-top: 30px;
+      padding: 15px;
+      background: #e63946;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .logout:hover {
+      opacity: 0.85;
+    }
+
+    .home {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>ARDRA FITNESS</h1>
+    <p>Member Dashboard</p>
+  </header>
+
+  <div class="container">
+
+    <div class="welcome">
+      <h2>Welcome, Karthik 👋</h2>
+      <p>Here is your membership information.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Member Name</h3>
+        <p>Karthik</p>
+      </div>
+
+      <div class="card">
+        <h3>Member ID</h3>
+        <p>AF001</p>
+      </div>
+
+      <div class="card">
+        <h3>Membership Plan</h3>
+        <p>Monthly</p>
+      </div>
+
+      <div class="card">
+        <h3>Membership Status</h3>
+        <p class="active">● Active</p>
+      </div>
+
+      <div class="card">
+        <h3>Start Date</h3>
+        <p>01 Nov 2026</p>
+      </div>
+
+      <div class="card">
+        <h3>Expiry Date</h3>
+        <p>30 Nov 2026</p>
+      </div>
+
+      <div class="card">
+        <h3>Payment Status</h3>
+        <p class="payment">✓ Paid</p>
+      </div>
+
+      <div class="card">
+        <h3>Gym</h3>
+        <p>Ardra Fitness</p>
+      </div>
+
+    </div>
+
+    <button class="logout" onclick="logout()">LOGOUT</button>
+
+    <a class="home" href="index.html">← Back to Home</a>
+
+  </div>
+
+  <script>
+
+    // Check whether member is logged in
+    if (localStorage.getItem("memberLoggedIn") !== "true") {
+      window.location.href = "member-login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("memberLoggedIn");
+      window.location.href = "member-login.html";
+    }
+
+  </script>
+
+</body>
+</html>
