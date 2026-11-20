@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Ardra Fitness</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px;
+      background: #1c1c1c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 22px;
+    }
+
+    .logout {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      background: white;
+      color: black;
+      font-weight: bold;
+    }
+
+    .dashboard {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .welcome {
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🔐 Ardra Fitness Admin</h1>
+
+    <button class="logout" onclick="logout()">
+      Logout
+    </button>
+  </header>
+
+  <main class="dashboard">
+
+    <div class="welcome">
+      <h2>Welcome, Admin 👋</h2>
+      <p>Manage your Ardra Fitness website.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h2>👥 Members</h2>
+        <p>Manage gym members.</p>
+      </div>
+
+      <div class="card">
+        <h2>🛒 Shop</h2>
+        <p>Manage products and prices.</p>
+      </div>
+
+      <div class="card">
+        <h2>👤 Owner</h2>
+        <p>Update owner information.</p>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ Website</h2>
+        <p>Manage website settings.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
+      window.location.href = "admin.html";
+    }
+
+    function logout() {
+      sessionStorage.removeItem("adminLoggedIn");
+      window.location.href = "admin.html";
+    }
+
+  </script>
+
+</body>
+</html>
